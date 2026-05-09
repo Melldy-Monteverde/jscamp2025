@@ -22,8 +22,7 @@
     <meta property="og:locale" content="es_ES" />
 
     <link rel="stylesheet" href="../css/styles.css" />
-
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="../js/index.js"></script>
   </head>
 
   <body>
@@ -50,19 +49,9 @@
         <a href="./pages/empresas.html">Empresas</a>
         <a href="./pages/salarios.html">Salarios</a>
       </nav>
-      <div>
-        <devjobs-avatar service="google" username="google.com" size="32">
-        </devjobs-avatar>
-
-        <devjobs-avatar service="google" username="netflix.com" size="32">
-        </devjobs-avatar>
-
-        <devjobs-avatar service="google" username="vercel.com" size="32">
-        </devjobs-avatar>
-      </div>
-      <div class="">
-        <button class="">Subir CV</button>
-        <button class=""></button>
+      
+      <div class="icons-avatar-container">
+        <devjobs-avatar class="" service="github" username="melldy-monteverde" size="40"></devjobs-avatar>
       </div>
     </header>
 
@@ -101,19 +90,20 @@
 
           <div class="search-filters">
             <select name="technology" id="filter-technology">
-              <option value="">Tecnología</option>
+              <opton value="">Tecnología</option>
               <optgroup label="Tecnologías populares">
                 <option value="javascript">JavaScript</option>
                 <option value="python">Python</option>
                 <option value="react">React</option>
-                <option value="nodejs">Node.js</option>
+                <option value="node">Node.js</option>
+                <option value="mobile">Mobile</option>
               </optgroup>
               <option value="java">Java</option>
-              <hr />
+
               <option value="csharp">C#</option>
               <option value="c">C</option>
               <option value="c++">C++</option>
-              <hr />
+
               <option value="ruby">Ruby</option>
               <option value="php">PHP</option>
             </select>
@@ -125,6 +115,8 @@
               <option value="guadalajara">Guadalajara</option>
               <option value="monterrey">Monterrey</option>
               <option value="barcelona">Barcelona</option>
+              <option value="madrid">Madrid</option>
+              <option value="bsas">Buenos Aires</option>
             </select>
 
             <select name="experience-level" id="filter-experience-level">
@@ -143,74 +135,11 @@
       <section class="jobs-results">
         <div class="jobs-results-container">
           <h2>Resultados de búsqueda</h2>
-          <div class="jobs-listings">
+          <div id="jobs-container" class="jobs-listings">
             <!-- Aquí se insertan los empleos dinámicamente -->
-            <article class="job-listing-card">
-              <div class="">
-                <h3 class="">Ingeniero de Software</h3>
-                <small class="">Tech Solutions Inc. | Remoto</small>
-                <p class="">
-                  Buscamos un ingeniero de software con experiencia en
-                  desarrollo web y conocimientos en JavaScript, React y Node.js.
-                  El candidato ideal debe ser capaz de trabajar en equipo y
-                  tener buenas habilidades de comunicación.
-                </p>
-                <div class="">
-                  <button class="button-apply-job">Aplicar</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="job-listing-card">
-              <div class="">
-                <h3 class="">Analista de Datos</h3>
-                <small class="">Data Driven Co. | Ciudad de México</small>
-                <p class="">
-                  Estamos buscando un analista de datos con experiencia en el
-                  manejo de grandes conjuntos de datos y herramientas de
-                  visualización. Se requiere conocimiento en SQL, Python y R.
-                </p>
-                <div class="">
-                  <button class="button-apply-job">Aplicar</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="job-listing-card">
-              <div class="">
-                <h3 class="">Desarrollador de Aplicaciones Móviles</h3>
-                <small class="">Mobile Apps Ltd. | Guadalajara</small>
-                <p class="">
-                  Buscamos un desarrollador de aplicaciones móviles con
-                  experiencia en iOS y/o Android. El candidato debe tener
-                  conocimientos en Swift, Kotlin y el desarrollo de interfaces
-                  de usuario.
-                </p>
-                <div class="">
-                  <button class="button-apply-job">Aplicar</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="job-listing-card">
-              <div class="">
-                <h3 class="">Ingeniero de DevOps</h3>
-                <small class="">Cloud Services SA | Remoto</small>
-                <p class="">
-                  Estamos buscando un ingeniero de DevOps con experiencia en la
-                  gestión de infraestructuras en la nube, automatización de
-                  procesos y herramientas de integración continua. Se requiere
-                  conocimiento en AWS, Azure o GCP. tener buenas habilidades de
-                  comunicación.
-                </p>
-                <div class="">
-                  <button class="button-apply-job">Aplicar</button>
-                </div>
-              </div>
-            </article>
           </div>
         </div>
-        <nav class="pagination">
+        <nav class="pagination" id="pagination">
           <a href="#"
             ><svg
               width="16"

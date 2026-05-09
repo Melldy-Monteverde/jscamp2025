@@ -67,6 +67,10 @@ select {
     outline: 2px solid #1173d4;
     outline-offset: 2px;
   }
+
+  option {
+    background-color: var(--input-bg);
+  }
 }
 
 /* Títulos principales */
@@ -223,9 +227,8 @@ button {
   font-size: 1rem;
   white-space: nowrap;
 
-  &:hover, /* pseudo-clase que significa que el ratón está encima */
+  &:hover,
   &:focus {
-    /* pseudo-clase que significa que el elemento tiene el foco */
     background-color: var(--primary-hover);
     outline: 2px solid white;
     outline-offset: 2px;
@@ -326,7 +329,8 @@ article {
   }
 }
 
-.jobs-results-container {
+.jobs-results-container,
+.jobs-detail-container {
   max-width: 1280px;
   margin: 0 auto;
   padding-inline: 1rem;
@@ -385,6 +389,7 @@ article {
 
     display: flex; /* valor original */
     align-items: start;
+    justify-content: space-between;
     gap: 1rem;
     padding: 1rem;
 
@@ -455,5 +460,211 @@ article {
   &.is-applied {
     background: #4caf50;
     pointer-events: none;
+  }
+}
+
+.jobs-details {
+  padding: 5rem 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #07111f 0%, #040b16 100%);
+  color: #ffffff;
+
+  .container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+  }
+
+  /* =========================
+     BREADCRUMB
+  ========================== */
+
+  .jobs-details-breadcrumb {
+    a {
+      text-decoration: none;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    margin-bottom: 4rem;
+
+    font-size: 0.95rem;
+    color: #8b95a7;
+
+    a {
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #1f7aff;
+    }
+  }
+
+  /* =========================
+     HEADER
+  ========================== */
+
+  .jobs-details-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+
+    margin-bottom: 4rem;
+
+    .jobs-details-info {
+      .jobs-details-title {
+        margin-bottom: 1rem;
+
+        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .jobs-details-company {
+        color: #9ca7b8;
+        font-size: 1.25rem;
+      }
+    }
+
+    .btn-primary {
+      flex-shrink: 0;
+    }
+  }
+
+  /* =========================
+     CONTENT
+  ========================== */
+
+  .jobs-details-content {
+    max-width: 860px;
+
+    .jobs-details-section {
+      margin-bottom: 4rem;
+
+      .jobs-details-section-title {
+        margin-bottom: 1.8rem;
+
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .jobs-details-text {
+        text-align: justify;
+        margin-bottom: 1.5rem;
+
+        color: #d0d7e2;
+        font-size: 1.1rem;
+        line-height: 1.9;
+      }
+
+      /* =========================
+         LIST
+      ========================== */
+
+      .jobs-details-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+
+        .jobs-details-list-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+
+          color: #d0d7e2;
+          font-size: 1.05rem;
+          line-height: 1.8;
+
+          .jobs-details-list-icon {
+            flex-shrink: 0;
+
+            width: 24px;
+            height: 24px;
+
+            margin-top: 0.15rem;
+
+            color: #1f7aff;
+          }
+        }
+      }
+    }
+  }
+
+  /* =========================
+     FOOTER
+  ========================== */
+
+  .jobs-details-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 4rem;
+    padding-top: 2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media (max-width: 992px) {
+    .jobs-details-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+
+    .jobs-details-breadcrumb {
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .jobs-details-header {
+      margin-bottom: 3rem;
+
+      .jobs-details-info {
+        .jobs-details-title {
+          font-size: 2.4rem;
+        }
+
+        .jobs-details-company {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .jobs-details-content {
+      .jobs-details-section {
+        margin-bottom: 3rem;
+
+        .jobs-details-section-title {
+          font-size: 1.7rem;
+        }
+
+        .jobs-details-text {
+          font-size: 1rem;
+        }
+
+        .jobs-details-list {
+          .jobs-details-list-item {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .jobs-details-footer {
+      justify-content: center;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
   }
 }
